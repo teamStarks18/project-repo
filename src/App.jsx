@@ -89,7 +89,7 @@ const App = () => {
 
     try {
       setLoader(true);
-      const response = await fetch('https://d25c-178-248-115-15.ngrok-free.app/models/', {
+      const response = await fetch('https://largely-smashing-pangolin.ngrok-free.app/models/', {
         method: 'POST',
         body: formData,
         headers: { 'ngrok-skip-browser-warning': true },
