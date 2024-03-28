@@ -139,7 +139,7 @@ const App = () => {
     }
   }
 
-  console.log(result);
+  //console.log(result);
 
   // async function fetchPlot() {
   //   try {
