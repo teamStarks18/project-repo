@@ -75,6 +75,35 @@ const App = () => {
     fileInputRef.current.click();
   }
 
+  // async function uploadFile() {
+  //   if (!video) {
+  //     alert('Please select a video file!');
+  //     return;
+  //   }
+
+  //   const models = selectedDetectors;
+
+  //   const formData = new FormData();
+  //   formData.append('file', video);
+  //   formData.append('models', models.join(','));
+
+  //   try {
+  //     setLoader(true);
+  //     const response = await fetch('https://largely-smashing-pangolin.ngrok-free.app/models/', {
+  //       method: 'POST',
+  //       body: formData,
+  //       headers: { 'ngrok-skip-browser-warning': true },
+  //     });
+
+  //     const result = await response.json();
+  //     setResult(result);
+  //     setLoader(false);
+  //     setPlotImage(null); // Reset plotImage when uploading a new file
+  //   } catch (error) {
+  //     console.error('Error uploading file:', error);
+  //   }
+  // }
+
   async function uploadFile() {
     if (!video) {
       alert('Please select a video file!');
@@ -92,17 +121,25 @@ const App = () => {
       const response = await fetch('https://largely-smashing-pangolin.ngrok-free.app/models/', {
         method: 'POST',
         body: formData,
-        headers: { 'ngrok-skip-browser-warning': true },
       });
 
       const result = await response.json();
-      setResult(result);
+
+      // Transforming the response into the desired format
+      const transformedData = result.modelName.map((modelName, index) => ({
+        name: modelName,
+        accuracy: result.accuracy[index],
+      }));
+
+      setResult(transformedData);
       setLoader(false);
       setPlotImage(null); // Reset plotImage when uploading a new file
     } catch (error) {
       console.error('Error uploading file:', error);
     }
   }
+
+  console.log(result);
 
   // async function fetchPlot() {
   //   try {
@@ -129,7 +166,7 @@ const App = () => {
             <div className='result-content'>
               <div className='main-txt'>Result</div>
               <div className='graph'>
-                <BarChart width={480} height={480} data={data}>
+                <BarChart width={480} height={480} data={result}>
                   <Bar dataKey='accuracy' fill='#72AAFF' />
                   <XAxis dataKey='name' />
                   <YAxis />
