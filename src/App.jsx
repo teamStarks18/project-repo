@@ -15,11 +15,11 @@ import {
 } from 'recharts';
 import Loader from './components/Loader';
 
-const data = [
-  { name: 'Page A', accuracy: 9.4 },
-  { name: 'Page B', accuracy: 9.2 },
-  { name: 'Page C', accuracy: 9.5 },
-];
+// const data = [
+//   { name: 'Page A', accuracy: 9.4 },
+//   { name: 'Page B', accuracy: 9.2 },
+//   { name: 'Page C', accuracy: 9.5 },
+// ];
 
 const App = () => {
   const [video, setVideo] = useState(null);
@@ -166,7 +166,7 @@ const App = () => {
             <div className='result-content'>
               <div className='main-txt'>Result</div>
               <div className='graph'>
-                <BarChart width={480} height={480} data={result}>
+                <BarChart width={580} height={580} data={result}>
                   <Bar dataKey='accuracy' fill='#72AAFF' />
                   <XAxis dataKey='name' />
                   <YAxis />
