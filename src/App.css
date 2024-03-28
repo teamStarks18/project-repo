@@ -88,7 +88,7 @@
 
 .upload-preview {
   width: 100%;
-  min-height: 260px;
+  height:100%;
   border-radius: 20px;
 }
 
