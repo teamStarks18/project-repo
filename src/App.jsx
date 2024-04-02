@@ -177,7 +177,7 @@ const App = () => {
             </div>
           ) : (
             <div className='no-result-content'>
-              <div className='main-txt'>Deepfake Detection Web Dashboard</div>
+              <div className='main-txt'>Deepfake Detector</div>
               <div className='sub-txt'>
                 Welcome to our Deepfake Detection Web Dashboard – a powerful tool designed to analyze uploaded videos using a list of tested and verified deepfake detectors. Each detector utilizes distinct techniques, having its own strengths and weaknesses. The results from these detectors are then intelligently aggregated by an aggregate model, which gives adequate weights to each model. The aggregator is finely tuned based on their historical performance of these detectors, as observed through a custom prepared dataset.
               </div>
