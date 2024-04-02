@@ -188,7 +188,7 @@ const App = () => {
                 Warning
                 </div>
                 
-                <div className='warning-text'>
+                <div className='sub-txt'>
                 Our deepfake detection system is not infallible. While we strive for accuracy, we acknowledge that errors can occur.
                   We are continuously refining and enhancing our algorithms to improve performance. Your contributions, in the form of uploaded videos, are immensely valuable in this process. 
                   Thank you for your understanding and support as we work towards better detection of manipulated content.
